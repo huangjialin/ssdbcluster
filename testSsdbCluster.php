@@ -4,12 +4,12 @@ require_once 'SsdbCluster.php';
 
 $config = array(
     "master" => array(
-                    array('host'=>'127.0.0.1', 'port'=>8888, "timeout"=>"10", "persistent_id"=>"", "retry_interval"=> 5),
-                    //array('host'=>'127.0.0.1', 'port'=>8891, "timeout"=>"10", "persistent_id"=>"", "retry_interval"=> 5),
+                    array('host'=>'127.0.0.1', 'port'=>8888, "timeout"=>"10"),
+                    array('host'=>'127.0.0.1', 'port'=>8891, "timeout"=>"10"),
     ),
     "slave" => array(
-                    array('host'=>'127.0.0.1', 'port'=>8889, "timeout"=>"10", "persistent_id"=>"", "retry_interval"=> 5),
-                    //array('host'=>'127.0.0.1', 'port'=>8890, "timeout"=>"10", "persistent_id"=>"", "retry_interval"=> 5),
+                    array('host'=>'127.0.0.1', 'port'=>8889, "timeout"=>"10"),
+                    array('host'=>'127.0.0.1', 'port'=>8890, "timeout"=>"10"),
     )
 );
 

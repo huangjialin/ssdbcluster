@@ -72,7 +72,7 @@ class SsdbCluster
         if (! empty($ssdb_type_config)) {
             $i = 0;
             foreach ($ssdb_type_config as $val) {
-                $this->_link_handle[$ssdb_type][$i] = new SSDB($val['host'], $val['port'],$val['timeout'], $val['persistent_id'],$val['retry_interval']);
+                $this->_link_handle[$ssdb_type][$i] = new SSDB($val['host'], $val['port'],$val['timeout']);
                 // 链接创建对象后先ping服务器是否真实的可用
                 try {
                     $this->_link_handle[$ssdb_type][$i]->ping();
