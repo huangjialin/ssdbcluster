@@ -563,15 +563,44 @@ class SsdbCluster
     }
     
     /**
-     * 从队列头部弹出一个或者多个元素
+     *  qpush的别名
      * 
      * @param string $queue_name
-     * @param number $size 条数
+     * @param mixed $data   字符串/数字/数组
+     * @return number
+     * @eg 
+     * $ssdb->qpush('queue', 'zhangsan');
+     * $ssdb->qpush('queue', array('lisi', 'wangwu'));  
+     */
+    public function qpush_back($queue_name, $data) //qpush_back
+    {
+        return $this->get_ssdb()->qpush_back($queue_name, $data);
+    }
+
+    /**
+     * 从队列头部弹出一个或者多个元素
+     *
+     * @param string $queue_name            
+     * @param number $size  条数
+     *           
      * @return string or array
      */
-    public function qpop($queue_name, $size =1) //qpop_back
+    public function qpop($queue_name, $size = 1) // qpop_back
     {
         return $this->get_ssdb()->qpop($queue_name, $size);
+    }
+
+    /**
+     * qpop的别名
+     *
+     * @param string $queue_name            
+     * @param number $size 条数
+     *            
+     * @return string or array
+     */
+    public function qpop_back($queue_name, $size = 1) // qpop_back
+    {
+        return $this->get_ssdb()->qpop_back($queue_name, $size);
     }
     
  
