@@ -1,0 +1,7 @@
+pushd/push_worker/jpush/vendor/*
+composer.lock
+composer.phar
+pushd/lib/jpush/vendor/*
+jpush.log
+pushd/conf/develop/*
+*.back
