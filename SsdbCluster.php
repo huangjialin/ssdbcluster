@@ -559,7 +559,7 @@ class SsdbCluster
      */
     public function qpush($queue_name, $data) //qpush_back
     {
-        $this->get_ssdb()->qpush($queue_name, $data);
+        return $this->get_ssdb()->qpush($queue_name, $data);
     }
     
     /**
@@ -571,7 +571,7 @@ class SsdbCluster
      */
     public function qpop($queue_name, $size =1) //qpop_back
     {
-        $this->get_ssdb()->qpop($queue_name, $size);
+        return $this->get_ssdb()->qpop($queue_name, $size);
     }
     
  
@@ -587,7 +587,7 @@ class SsdbCluster
      */
     public function qpush_front($queue_name, $data)
     {
-        $this->get_ssdb()->qpush_front($queue_name, $data);
+        return $this->get_ssdb()->qpush_front($queue_name, $data);
     }
     
     /**
@@ -599,7 +599,7 @@ class SsdbCluster
      */
     public function qpop_front($queue_name, $size =1)
     {
-        $this->get_ssdb()->qpop_front($queue_name, $size);
+        return $this->get_ssdb()->qpop_front($queue_name, $size);
     }
     
     
@@ -612,7 +612,7 @@ class SsdbCluster
     public function qfront($queue_name)
     {
         
-        $this->get_ssdb(false)->qfront($queue_name);
+        return $this->get_ssdb(false)->qfront($queue_name);
     }
     
     /**
@@ -623,7 +623,7 @@ class SsdbCluster
      */
     public function qback($queue_name)
     {
-        $this->get_ssdb(false)->qback($queue_name);
+        return $this->get_ssdb(false)->qback($queue_name);
     }
     
     /**
@@ -635,7 +635,7 @@ class SsdbCluster
      */
     public function qget($queue_name, $offset = 0)
     {
-        $this->get_ssdb(false)->qget($queue_name, $offset);
+       return $this->get_ssdb(false)->qget($queue_name, $offset);
     }
     
    
@@ -649,9 +649,26 @@ class SsdbCluster
      */
     public function qset($queue_name, $offset = 0, $data)
     {
-        $this->get_ssdb()->qset($queue_name, $offset, $data);
+        return $this->get_ssdb()->qset($queue_name, $offset, $data);
     }
     
+    
+    /**
+     * 指定范围位置取值
+     * 
+     * @param string $queue_name
+     * @param number $offset
+     * @param number $limit
+     * @return array | false
+     */
+    public function qrange($queue_name, $offset = 0, $limit = 10)
+    {
+        $res = $this->get_ssdb(false)->qrange($queue_name, $offset, $limit);
+        if(empty($res)){
+            return false;
+        }
+        return $res;
+    }
     
     /**
      * 队列首删除指定 $size 条数据
@@ -662,7 +679,7 @@ class SsdbCluster
      */
     public function qtrim_front($queue_name, $size = 1)
     {
-        $this->get_ssdb()->qtrim_front($queue_name, $size);
+        return $this->get_ssdb()->qtrim_front($queue_name, $size);
     }
     
     
@@ -675,7 +692,7 @@ class SsdbCluster
      */
     public function qtrim_back($queue_name, $size = 1)
     {
-        $this->get_ssdb()->qtrim_front($queue_name, $size);
+        return $this->get_ssdb()->qtrim_front($queue_name, $size);
     }
     
     
