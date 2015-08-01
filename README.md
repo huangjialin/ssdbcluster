@@ -1,17 +1,19 @@
 ##SsdbCluster
-    SsdbCluster 是一个依托于phpssdb（https://github.com/jonnywang/phpssdb/ php的ssdb扩展）构建ssdb客户端类
+````
+   SsdbCluster 是一个依托于phpssdb（https://github.com/jonnywang/phpssdb/ php的ssdb扩展）构建ssdb客户端类
 
-
+````
 ##维护人
+````
 * huangjialin  https://github.com/huangjialin
 
-
+````
 ##特色
-
+````
     1) 多主多从，随机获取主从对象
     2) 对象实例化时候检查服务器是否可用
     3）待续
-
+````
 ##demo  
 ```php`    
  $config = array(
