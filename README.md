@@ -13,7 +13,7 @@
     3）待续
 
 ##demo  
-    
+```php`    
  $config = array(
     "master" => array(
                     array('host'=>'127.0.0.1','port'=>8888),
@@ -34,7 +34,7 @@ try {
 } catch (Exception $e) {
     echo $e->getMessage();
 }
-
+````
 ##相关扩展
 
 phpssdb https://github.com/jonnywang/phpssdb/
