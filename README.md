@@ -1,5 +1,5 @@
 ##SsdbCluster
-    SsdbCluster 是一个依托于phpssdb（https://github.com/jonnywang/phpssdb/ php的ssdb扩展）构建ssdb客户端类，主要特性如下：
+    SsdbCluster 是一个依托于phpssdb（https://github.com/jonnywang/phpssdb/ php的ssdb扩展）构建ssdb客户端类
 
 
 ##维护人
@@ -13,7 +13,6 @@
     3）待续
 
 ##demo
-/*===================================
 eg：      
  $config = array(
     "master" => array(
@@ -35,8 +34,6 @@ try {
 } catch (Exception $e) {
     echo $e->getMessage();
 }
- ======================================*/
-
 
 ##相关扩展
 
