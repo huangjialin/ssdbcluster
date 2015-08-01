@@ -12,7 +12,8 @@
     2) 对象实例化时候检查服务器是否可用
     3）待续
 
-##demo      
+##demo  
+    
  $config = array(
     "master" => array(
                     array('host'=>'127.0.0.1','port'=>8888),
